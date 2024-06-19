@@ -78,7 +78,7 @@ export default async function Home() {
 
       {/* vision-mission-technology */}
       <section className="container mx-auto section_Divider">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 ">
           <Mission description={mission?.missionDescription} title={mission?.missionTitle || ''} />
           <Vision description={vision?.visionDescription} title={vision?.visionTitle || ''} />
           <Technology description={technology?.technologyDescription} title={technology?.technologyTitle || ''} />
