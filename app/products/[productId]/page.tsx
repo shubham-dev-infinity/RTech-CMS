@@ -40,8 +40,8 @@ export default async function ProductDetails(props: { params: { productId: strin
                             <h3 className="sr-only">Description</h3>
                             <TinaMarkdown content={product.description} />
                         </div>
-                        <div className="my-4 flex">
-                        <Link href='/products' className='flex items-center w-[max-content] h-[-webkit-fill-available] justify-center '><p className=" transition duration-700 ease-in-out text-xl text-brandSecondary text-shadow-brandSecondary hover:text-brandPrimary pt-4">view more...</p></Link>
+                        <div className="my-4 text-right mt-8">
+                        <Link href='/products' className='block text-right text-sm text-brandSecondary'>View All Products</Link>
                             
                         </div>
                         <section aria-labelledby="details-heading" >
