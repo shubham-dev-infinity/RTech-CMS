@@ -25,6 +25,9 @@
   font-weight: bold;
   font-size: 2.25rem;
   margin-bottom: 1.25rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 }
 .sub_Title {
   font-weight: 500;
@@ -38,11 +41,10 @@
 .close_Mobile_Menu {
   display: none !important;
 }
-.animate-zoom-img{
+.animate-zoom-img {
   transition: 1s;
   transform: scale(1) !important;
 }
-.animate-zoom-img:hover{
+.animate-zoom-img:hover {
   transform: scale(1.2) !important;
-
 }

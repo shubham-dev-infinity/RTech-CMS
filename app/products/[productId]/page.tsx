@@ -41,8 +41,8 @@ export default async function ProductDetails(props: { params: { productId: strin
                             <TinaMarkdown content={product.description} />
                         </div>
                         <div className="my-4 text-right mt-8">
-                        <Link href='/products' className='block text-right text-sm text-brandSecondary'>View All Products</Link>
-                            
+                            <Link href='/products' className='block text-right text-sm text-brandSecondary'>View All Products</Link>
+
                         </div>
                         <section aria-labelledby="details-heading" >
                             <h2 id="details-heading" className="sr-only">
@@ -52,7 +52,7 @@ export default async function ProductDetails(props: { params: { productId: strin
                         </section>
                         <div className="mt-16 flex">
                             <></>
-                        <Button
+                            <Button
                                 type="submit"
                                 className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-brandSecondary px-8 py-3 text-base font-medium focus:outline-none sm:w-full"
                             >
