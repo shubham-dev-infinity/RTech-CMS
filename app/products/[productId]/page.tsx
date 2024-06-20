@@ -2,6 +2,8 @@ import ProductDisclosures, { IProductDisclosure } from './_components/product-di
 import { client } from '../../../tina/__generated__/databaseClient'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import ProductImageSlider from './_components/product-image-slider'
+import Link from 'next/link'
+import Button from '../../../components/button'
 
 export default async function ProductDetails(props: { params: { productId: string } }) {
     const { params: { productId } } = props
@@ -38,20 +40,25 @@ export default async function ProductDetails(props: { params: { productId: strin
                             <h3 className="sr-only">Description</h3>
                             <TinaMarkdown content={product.description} />
                         </div>
-                        <div className="mt-16 flex">
-                            <button
-                                type="submit"
-                                className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-brandSecondary px-8 py-3 text-base font-medium text-white hover:opacity-90 focus:outline-none sm:w-full"
-                            >
-                                Add to Cart
-                            </button>
+                        <div className="my-4 text-right mt-8">
+                            <Link href='/products' className='block text-right text-sm text-brandSecondary'>View All Products</Link>
+
                         </div>
-                        <section aria-labelledby="details-heading" className="mt-12">
+                        <section aria-labelledby="details-heading" >
                             <h2 id="details-heading" className="sr-only">
                                 Additional details
                             </h2>
                             <ProductDisclosures disclosures={disclosures} />
                         </section>
+                        <div className="mt-16 flex">
+                            <></>
+                            <Button
+                                type="submit"
+                                className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-brandSecondary px-8 py-3 text-base font-medium focus:outline-none sm:w-full"
+                            >
+                                Add to Cart
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

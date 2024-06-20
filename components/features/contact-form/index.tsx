@@ -136,7 +136,7 @@ export default function ContactForm() {
                         </div>
                         <div className="mt-8 flex justify-end">
                             <button
-                                className="rounded-md  px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-brandSecondary text-white border-2 border-transparent hover:border-black hover:bg-transparent hover:text-black rounded-md"
+                                className="rounded-md  px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-brandSecondary text-white border-2 border-transparent hover:border-black hover:bg-transparent hover:text-black"
                                 onClick={() => validateAndSendEmail()}>
                                 Send message
                             </button>
