@@ -8,10 +8,10 @@ import Link from 'next/link'
 export default function Blog(props: Omit<IBlog, 'description'>) {
     const { imageUrl, title, date, uniqueId } = props
     return (
-        <Link href={`/blogs/${uniqueId}`} className='relative block h-full overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-500 rounded-md'>
+        <Link href={`/blogs/${uniqueId}`} className='relative block h-full overflow-hidden cursor-pointer  rounded-md'>
             <div className='flex flex-col bg-gray-100'>
                 <div className='overflow-hidden'>
-                <Image src={imageUrl} alt={title} width={300} height={300} className='h-full w-full object-cover transition-all duration-500' />
+                <Image src={imageUrl} alt={title} width={300} height={300} className='h-full w-full object-cover transition-all hover:scale-105 duration-200 ease-in-out' />
                 </div>
                 <div className='px-4 py-3 flex-1'>
                     <div className='flex flex-col justify-end h-full'>

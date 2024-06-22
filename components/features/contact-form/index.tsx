@@ -2,47 +2,56 @@
 import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import Input from '../../form/input'
 import TextArea from '../../form/text-area'
-import Button from '../../button'
-import { useEffect, useState } from "react";
-import emailjs from '@emailjs/browser';
-
+// import Button from '../../button'
+import { useState } from "react";
+import Spinner from '../../loaders/spinner';
 
 export default function ContactForm() {
 
     const [formData, setFormData] = useState({
-        first_name: '',
-        last_name: '',
-        email_name: '',
-        company_name: '',
-        msg_name: ''
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        message: ''
     });
-
-    useEffect(() => {
-        emailjs.init("k6rhO5aU6BL4-N8S6");
-    }, []);
+    const [isFormSubmitting, setIsFormSubmitting] = useState(false);
+    const [submissionMessage, setSubmissionMessage] = useState('');
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
-        setFormData(prevData => ({
-            ...prevData,
+        setFormData(prevState => ({
+            ...prevState,
             [name]: value
         }));
     };
 
-    const validateAndSendEmail = () => {
-        sendEmail();
-    };
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsFormSubmitting(true);
+        const formAction = "https://docs.google.com/forms/d/e/1FAIpQLSe9PvH-X4uiBDU8RAQ7Tz2Yx_fa4GMxanxp2B4zHA_aM0AMIw/formResponse";
+        const formFields = {
+            'entry.36841487': formData.firstName,
+            'entry.244118586': formData.lastName,
+            'entry.1459667133': formData.email,
+            'entry.623705129': formData.company,
+            'entry.1891614370': formData.message
+        };
 
-    const sendEmail = () => {
-        // console.log('formData', formData);
-        emailjs.send("service_4c2a44j", "template_aug7m5a", formData)
-        setFormData({
-            first_name: '',
-            last_name: '',
-            email_name: '',
-            company_name: '',
-            msg_name: ''
-        });
+        try {
+            const response = await fetch(formAction, {
+                method: 'POST',
+                body: new URLSearchParams(formFields),
+                mode: 'no-cors' // Note: 'no-cors' mode means the response is an opaque object
+            });
+            console.log('Form submitted', response);
+            setSubmissionMessage('Thank you for your message. We will get back to you soon!');
+        } catch (error) {
+            console.error('Error submitting form', error);
+            setSubmissionMessage('Failed to send message. Please try again later.');
+        } finally {
+            setIsFormSubmitting(false);
+        }
     };
 
     return (
@@ -115,35 +124,45 @@ export default function ContactForm() {
                         </dl>
                     </div>
                 </div>
-                <div className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-24">
-                    <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-                        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                            <div className='col-span-2 sm:col-span-1'>
-                                <Input label='First Name' required type='text' name="first_name" value={formData.first_name} onChange={handleChange}/>
+                <div className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-24 m-auto">
+                    <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg ">
+                        {!submissionMessage && <form onSubmit={handleSubmit}>
+                            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                                <div className='col-span-2 sm:col-span-1'>
+                                    <Input label='First Name' required type='text' name="firstName" value={formData.firstName} onChange={handleChange} />
+                                </div>
+                                <div className='col-span-2 sm:col-span-1'>
+                                    <Input label='Last Name' required type='text' name="lastName" value={formData.lastName} onChange={handleChange} />
+                                </div>
+                                <div className='col-span-2'>
+                                    <Input label='Email' required type='email' name="email" value={formData.email} onChange={handleChange} />
+                                </div>
+                                <div className='col-span-2'>
+                                    <Input label='Company' type='text' name="company" value={formData.company} onChange={handleChange} />
+                                </div>
+                                <div className='col-span-2'>
+                                    <TextArea label='Write a message' name="message" value={formData.message} onChange={handleChange} />
+                                </div>
                             </div>
-                            <div className='col-span-2 sm:col-span-1'>
-                                <Input label='Last Name' required type='text' name="last_name" value={formData.last_name} onChange={handleChange} />
+                            <div className="mt-8 flex justify-end">
+                                <button
+                                    className="rounded-md  px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600   bg-brandSecondary text-white border-2 border-transparent hover:border-black hover:bg-transparent hover:text-black"
+                                    type="submit"
+                                    disabled={isFormSubmitting}
+                                >
+                                    {isFormSubmitting ? <Spinner /> : 'Send message'}
+                                </button>
                             </div>
-                            <div className='col-span-2'>
-                                <Input label='Email' required type='email' name="email_name" value={formData.email_name} onChange={handleChange} />
-                            </div>
-                            <div className='col-span-2'>
-                                <Input label='Company' type='text' name="company_name" value={formData.company_name} onChange={handleChange} />
-                            </div>
-                            <div className='col-span-2'>
-                                <TextArea label='Write a message' name="msg_name" value={formData.msg_name} onChange={handleChange} />
-                            </div>
-                        </div>
-                        <div className="mt-8 flex justify-end">
-                            <Button
-                                className="rounded-md  px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                onClick={() => validateAndSendEmail()}>
-                                Send message
-                            </Button>
-                        </div>
+                        </form>}
+                        {
+                            <p className='flex justify-center items-center h-full'>
+                                {!!submissionMessage && submissionMessage}
+                            </p>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
