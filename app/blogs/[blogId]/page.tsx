@@ -64,10 +64,10 @@ export default async function BlogDetails(props: { params: { blogId: string } })
             </section>
             <section className='container mx-auto section_Divider'>
                 <div className='grid grid-cols-12'>
-                    <div className='col-span-8'>
+                    <div className='lg:col-span-7  col-span-12 '>
                         <TinaMarkdown content={blogContent} />
                     </div>
-                    <div className='col-span-4 px-4'>
+                    <div className='lg:col-span-5 col-span-12 lg:px-4 px-0 '>
                         <div className='flex flex-col'>
                             <BlogSearch />
                             <div className='mt-8'>

@@ -3,7 +3,6 @@ import Link from "next/link";
 import ActiveNavLink from "./components/active-link";
 import ToggleMenuIcon from "./components/toggle-menu-icon";
 import { NavbarQuery } from "../../../tina/__generated__/types";
-import Button from "../../button";
 
 export default function Navbar(props: {
     data: NavbarQuery;
@@ -13,11 +12,11 @@ export default function Navbar(props: {
     const { logo, menu: menus } = props.data.navbar
     return (
         <nav className="bg-white shadow fixed top-0 w-full z-10">
-            <div className="mx-auto container pl-0  pr-2 sm:px-0">
-                <div className="flex h-20 justify-between">
+            <div className="pl-0  pr-2 sm:px-0">
+                <div className="container mx-auto flex h-20 justify-between">
                     <div className="flex">
-                        <Link href='/' className="flex flex-shrink-0 items-center cursor-pointer">
-                            <Image src={logo || ''} alt="RTech Company Logo" className="w-auto h-auto" width={100} height={100} />
+                        <Link href='/' className="flex  flex-shrink-0 items-center cursor-pointer">
+                            <Image src={logo || ''} alt="RTech Company Logo" className="w-auto lg:h-full h-auto" width={100} height={100} />
                         </Link>
                     </div>
                     <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -25,17 +24,15 @@ export default function Navbar(props: {
                             menus?.map((menu) => menu && <ActiveNavLink
                                 key={menu.label}
                                 link={menu.link || ''}
-                                className='inline-flex items-center  px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-white hover:border-b-2 hover:border-brandSecondary'
+                                className='inline-flex items-center  px-1 pt-1 text-sm font-medium text-gray-900 transition duration-700 ease-in-out border-b-2 border-white hover:border-b-2 hover:border-brandSecondary'
                                 activeClassName='border-b-2 border-brandSecondary'
                             >
                                 {menu.label}
                             </ActiveNavLink>)
                         }
                     </div>
-                    <Link href='/contact-us' className="hidden sm:ml-6 sm:flex sm:items-center">
-                        <Button type="button" className="text-md  p-2 capitalize ">
-                            get a demo
-                        </Button>
+                    <Link href='#' className="hidden sm:ml-6 sm:flex sm:items-center">
+                        <Image  src='/addToCard/card.svg' alt="" width={24} height={24}/>
                     </Link>
                     <div className="-mr-2 flex items-center sm:hidden">
                         <ToggleMenuIcon />
@@ -57,11 +54,9 @@ export default function Navbar(props: {
                     }
                 </div>
                 <div className="border-t border-gray-200 pb-3 pt-4">
-                    <div className="flex items-center px-3">
-                        <Button type="button" className="text-md p-2 capitalize">
-                            get a demo
-                        </Button>
-                    </div>
+                    <Link href='#' className="flex items-center px-3">
+                        <Image  src='/addToCard/card.svg' alt="" width={24} height={24}/>
+                    </Link>
                 </div>
             </div>
         </nav>
