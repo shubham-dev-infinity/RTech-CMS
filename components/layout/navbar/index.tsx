@@ -3,6 +3,7 @@ import Link from "next/link";
 import ActiveNavLink from "./components/active-link";
 import ToggleMenuIcon from "./components/toggle-menu-icon";
 import { NavbarQuery } from "../../../tina/__generated__/types";
+import Cart from "./components/cart";
 
 export default function Navbar(props: {
     data: NavbarQuery;
@@ -31,9 +32,7 @@ export default function Navbar(props: {
                             </ActiveNavLink>)
                         }
                     </div>
-                    <Link href='#' className="hidden sm:ml-6 sm:flex sm:items-center">
-                        <Image  src='/addToCard/card.svg' alt="" width={24} height={24}/>
-                    </Link>
+                    <Cart />
                     <div className="-mr-2 flex items-center sm:hidden">
                         <ToggleMenuIcon />
                     </div>
@@ -53,10 +52,8 @@ export default function Navbar(props: {
                         </ActiveNavLink>)
                     }
                 </div>
-                <div className="border-t border-gray-200 pb-3 pt-4">
-                    <Link href='#' className="flex items-center px-3">
-                        <Image  src='/addToCard/card.svg' alt="" width={24} height={24}/>
-                    </Link>
+                <div className="border-t border-gray-200 pb-3 pt-4 text-black">
+                    <Cart />
                 </div>
             </div>
         </nav>

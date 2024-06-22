@@ -4,10 +4,13 @@ import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import ProductImageSlider from './_components/product-image-slider'
 import Link from 'next/link'
 import Button from '../../../components/button'
+import AddToCartButton from './_components/add-to-cart-button'
 
 export default async function ProductDetails(props: { params: { productId: string } }) {
+
+
     const { params: { productId } } = props
-    //making request to product
+    //making request to product  
     const res = await client.queries.product({ relativePath: `${productId}.md` });
     const product = res.data.product
     const disclosures = product.disclosures?.reduce((acc: IProductDisclosure[], disclosure) => {
@@ -45,8 +48,8 @@ export default async function ProductDetails(props: { params: { productId: strin
                             </h2>
                             <ProductDisclosures disclosures={disclosures} />
                         </section>
-                        <button type="submit" className='mt-8 border-solid border-2 border-brandSecondary text-brandSecondary bg-transparent py-3 w-full rounded-lg hover:bg-brandSecondary hover:text-white transition duration-700 ease-in-out'>Add to Cart</button>
                         <div className="mt-16 flex">
+                            <AddToCartButton product={JSON.parse(JSON.stringify(product))}/>
                         </div>
                     </div>
                 </div>
