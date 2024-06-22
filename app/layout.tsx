@@ -4,6 +4,8 @@ import Footer from "../components/layout/footer";
 import { cn } from "../utils/cn";
 import { client } from "../tina/__generated__/databaseClient";
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,11 +24,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'relative')}>
-        <Navbar data={navbarResponse.data} query={navbarResponse.query} variables={navbarResponse.variables} />
+      <Suspense fallback={<Loading/>} >
+        <body className={cn(inter.className, 'relative')}>
+      <Navbar data={navbarResponse.data} query={navbarResponse.query} variables={navbarResponse.variables} />
         {children}
         <Footer data={footerResponse.data} query={footerResponse.query} variables={footerResponse.variables} />
       </body>
+      </Suspense>
     </html>
   );
 }
