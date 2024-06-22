@@ -37,7 +37,7 @@ export default async function Home() {
 
       {/* partner section */}
       <section className="container mx-auto section_Divider">
-        <h2 className='text-sm text-center font-extrabold mb-1'>{partners?.title}</h2>
+        <h2 className='text-center font-extrabold mb-1'>{partners?.title}</h2>
         <TrustedPartner partners={partnersList} />
       </section>
 

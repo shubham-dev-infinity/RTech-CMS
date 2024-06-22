@@ -2,8 +2,7 @@ import ProductDisclosures, { IProductDisclosure } from './_components/product-di
 import { client } from '../../../tina/__generated__/databaseClient'
 import { TinaMarkdown } from 'tinacms/dist/rich-text'
 import ProductImageSlider from './_components/product-image-slider'
-import Link from 'next/link'
-import Button from '../../../components/button'
+import Breadcrumb from '../../../components/breadcrumb'
 
 export default async function ProductDetails(props: { params: { productId: string } }) {
     const { params: { productId } } = props
@@ -20,10 +19,11 @@ export default async function ProductDetails(props: { params: { productId: strin
     return (
         <div className="bg-white container mx-auto min-h-screen pt-32">
             <div className="max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
-                <div className="mb-8">
-                    <Link href='/products' className='block text-left text-sm text-brandSecondary'>
-                        <Button className='p-2'>Back to Products</Button>
-                    </Link>
+                <div className="mb-16 flex justify-center">
+                    <Breadcrumb list={[
+                        { name: 'Products', link: '/products' },
+                        { name: product.title || '' }
+                    ]} />
                 </div>
                 <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
                     {/* Image gallery */}
