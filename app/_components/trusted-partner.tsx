@@ -13,8 +13,8 @@ export default function TrustedPartner({ partners }: ITrustedPartner) {
     return (
         <div className="mx-auto mt-10 flex flex-wrap gap-6 justify-evenly">
             {partners.map(({ partnerImage, partnerName }, index) =>
-                <FadeIn>
-                    <Image key={index}
+                <FadeIn key={index}>
+                    <Image
                         src={partnerImage}
                         alt={partnerName}
                         width={180}
