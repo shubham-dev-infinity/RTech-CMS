@@ -8,13 +8,12 @@ module.exports = {
   theme: {
     container: {
       padding: {
-        DEFAULT: '1.25rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
+        DEFAULT: "1.25rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
       },
     },
-   
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -22,18 +21,18 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        brandPrimary: '#050C9C',
-        brandSecondary: 'rgb(37 177 239)'
+        brandPrimary: "#050C9C",
+        brandSecondary: "rgb(34 150 210)",
       },
       animation: {
-        'infinite-scroll': 'infinite-scroll 10s linear infinite',
+        "infinite-scroll": "infinite-scroll 10s linear infinite",
       },
       keyframes: {
-        'infinite-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
-        }
-      }
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   // plugins: [

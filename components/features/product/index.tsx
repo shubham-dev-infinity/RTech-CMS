@@ -6,12 +6,15 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export default function Product(props: ProductQuery['product']) {
     const { uniqueId, productImages, title, overviewDescription } = props
     return (
-        <div className='p-12 h-full flex flex-col gap-8 bg-gray-100 rounded-md '>
-            <Image src={productImages?.[0] || ''} height={600} width={400} alt={title || ''} className='m-auto transition scale-1 hover:scale-105 duration-200 ease-in-out flex-1' />
-            <div className=' flex-1 flex flex-col gap-8 justify-between ' >
-                <h2 className='text-xl sm:text-2xl font-bold tracking-wide'>{title}</h2>
-                <TinaMarkdown content={overviewDescription} />
-                <Link href={`/products/${uniqueId}`} className='rounded-full w-fit px-6 py-2 transition duration-700 ease-in-out border-brandSecondary text-brandSecondary font-bold text-center text-sm tracking-wide border-2  hover:bg-transparent hover:text-black  '>
+        <div className='h-full flex flex-col gap-8 bg-gray-100 border rounded-md transition duration-300 ease-in-out hover:scale-[1.02]'>
+            <Image src={productImages?.[0] || ''} height={600} width={500} alt={title || ''} className='mt-10 mx-auto flex-1' />
+            <div className='p-12 flex-1 flex flex-col gap-6 justify-between ' >
+                <h2 className='text-4xl font-semibold'>{title}</h2>
+                <div className='text-slate-500'>
+                    <TinaMarkdown content={overviewDescription} />
+                </div>
+
+                <Link href={`/products/${uniqueId}`} className='rounded-full shadow-md w-fit px-6 py-2.5 transition duration-300 ease-in-out border-brandSecondary font-semibold text-center text-sm border-solid border-2 hover:bg-brandSecondary hover:text-white'>
                     Discover The Product
                 </Link>
             </div>

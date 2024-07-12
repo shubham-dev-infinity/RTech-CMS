@@ -10,39 +10,18 @@ interface ITrustedPartner {
 }
 export default function TrustedPartner({ partners }: ITrustedPartner) {
     return (
-        <div className="w-full inline-flex flex-nowrap overflow-hidden">
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                {
-                    partners.map(({ partnerImage, partnerName }, index) =>
-                        <li key={index}>
-                            <Image src={partnerImage} alt={partnerName} width={150} height={100} />
-                        </li>)
-                }
-            </ul>
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                {
-                    partners.map(({ partnerImage, partnerName }, index) =>
-                        <li key={index}>
-                            <Image src={partnerImage} alt={partnerName} width={150} height={100} />
-                        </li>)
-                }
-            </ul>
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                {
-                    partners.map(({ partnerImage, partnerName }, index) =>
-                        <li key={index}>
-                            <Image src={partnerImage} alt={partnerName} width={150} height={100} />
-                        </li>)
-                }
-            </ul>
-            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                {
-                    partners.map(({ partnerImage, partnerName }, index) =>
-                        <li key={index}>
-                            <Image src={partnerImage} alt={partnerName} width={150} height={100} />
-                        </li>)
-                }
-            </ul>
+        <div className="mx-auto mt-10 flex flex-wrap gap-6 justify-evenly">
+            {partners.map(({ partnerImage, partnerName }, index) =>
+
+                <img key={index}
+                    src={partnerImage}
+                    alt={partnerName}
+                    width={180}
+                    height={44}
+                    className="max-h-32  object-contain" />
+            )
+            }
+
         </div>
     )
 }
