@@ -19,6 +19,7 @@ description: >
 disclosures:
   - title: SYSTEM FEATURES
     features:
+      - Moving hot air nozzle
       - Custom UI with 7" High resolution touchscreen for ease of use
       - Programable parameters such as tacking time (sec) and cooling time (sec)
       - 'System allows 10 recipes to store various products/projects '
