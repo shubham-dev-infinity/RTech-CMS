@@ -1,6 +1,6 @@
 ---
 heroBanner:
-  heroBannerTitle: Automation Solutions for Smarter Manufacturing
+  heroBannerTitle: Cutting-edge Automation Solutions for Smarter Manufacturing
   heroBannerDescription: >-
     At RTECH, we specialize in manufacturing automated equipment for medical
     device manufacturing, providing fast and reliable solutions that you can
