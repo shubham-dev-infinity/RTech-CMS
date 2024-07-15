@@ -18,8 +18,8 @@ export default function TrustedPartner({ partners }: ITrustedPartner) {
                         src={partnerImage}
                         alt={partnerName}
                         width={180}
-                        height={44}
-                        className="max-h-32  object-contain" />
+                        height={40}
+                        className="max-h-24  object-contain" />
                 </FadeIn>
             )
             }
