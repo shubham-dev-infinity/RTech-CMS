@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "RTecg- New Generation Automation Company",
+  title: "RTECH | Medical Devices | Equipment | Manufacturing Automation",
   description: "RTech is well known for there services in automation sector and had great history of successful projects",
 };
 
