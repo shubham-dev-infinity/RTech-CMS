@@ -33,8 +33,8 @@ export default function Navbar(props: {
                         }
                     </div>
                     <Link href='/contact-us' className="hidden sm:ml-6 sm:flex sm:items-center">
-                        <Button type="button" className="text-md  p-2 capitalize ">
-                            schedule a demo
+                        <Button type="button" className="text-md p-2">
+                            Schedule a Demo
                         </Button>
                     </Link>
                     <div className="-mr-2 flex items-center sm:hidden">
@@ -58,8 +58,8 @@ export default function Navbar(props: {
                 </div>
                 <div className="border-t border-gray-200 py-6">
                     <div className="flex items-center px-3">
-                        <Button type="button" className="w-full text-md p-2 capitalize">
-                            schedule a demo
+                        <Button type="button" className="w-full text-md p-2">
+                            Schedule a Demo
                         </Button>
                     </div>
                 </div>
