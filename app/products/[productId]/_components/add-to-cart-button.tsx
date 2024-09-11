@@ -12,6 +12,6 @@ export default function AddToCartButton({ product }: IAddToCartButton) {
     };
 
     return (
-        <button onClick={handleAddToCart} type="submit" className='mt-8 border-solid border-2 border-brandSecondary text-brandSecondary bg-transparent py-3 w-full rounded-lg hover:bg-brandSecondary hover:text-white transition duration-700 ease-in-out'>Add to Cart</button>
+        <button onClick={handleAddToCart} type="submit" className='border-solid border-2 border-brandSecondary text-brandSecondary bg-transparent py-3 w-full rounded-lg hover:bg-brandSecondary hover:text-white transition duration-700 ease-in-out'>Add to Cart</button>
     )
 }

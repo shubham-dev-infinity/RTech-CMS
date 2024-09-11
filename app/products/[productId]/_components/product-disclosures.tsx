@@ -17,14 +17,13 @@ export default function ProductDisclosures({ disclosures }: IProductDisclosures)
     return (
         <FadeInStagger className="divide-y divide-gray-200 border-t">
             {disclosures?.map((disclosure) => (disclosure &&
-                <Disclosure as="div" key={disclosure.title}>
+                <Disclosure as="div" key={disclosure.title} defaultOpen={true}>
                     {({ open }) => (
                         <FadeIn >
                             <h3>
-                                <DisclosureButton className="group relative flex w-full items-center justify-between py-6 text-left">
+                                <DisclosureButton className="group relative flex w-full items-center justify-between py-4 text-left">
                                     <span
-                                        className={cn(open ? ' text-brandSecondary' : 'text-gray-900', 'text-sm font-medium')}
-                                    >
+                                        className="text-brandSecondary text-lg font-medium" >
                                         {disclosure.title}
                                     </span>
                                     <span className="ml-6 flex items-center">
@@ -42,7 +41,7 @@ export default function ProductDisclosures({ disclosures }: IProductDisclosures)
                                     </span>
                                 </DisclosureButton>
                             </h3>
-                            <DisclosurePanel as="div" className="prose prose-sm pl-6 pb-6 text-sm text-gray-600">
+                            <DisclosurePanel as="div" className="prose prose-sm pl-6 pb-6 text-gray-600">
                                 {/* <TinaMarkdown content={disclosure.features} /> */}
                                 <ul role="link">
                                     {disclosure.features?.map((feature) => (

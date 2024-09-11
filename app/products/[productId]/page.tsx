@@ -42,15 +42,15 @@ export default async function ProductDetails(props: { params: { productId: strin
                             <h3 className="sr-only">Description</h3>
                             <TinaMarkdown content={product.description} />
                         </div>
+                        <div className="my-16 flex">
+                            <AddToCartButton product={JSON.parse(JSON.stringify(product))} />
+                        </div>
                         <section aria-labelledby="details-heading" className='mt-8' >
                             <h2 id="details-heading" className="sr-only">
                                 Additional details
                             </h2>
                             <ProductDisclosures disclosures={disclosures} />
                         </section>
-                        <div className="mt-16 flex">
-                            <AddToCartButton product={JSON.parse(JSON.stringify(product))} />
-                        </div>
                     </div>
                 </FadeIn>
             </div>
