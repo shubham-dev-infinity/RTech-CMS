@@ -1,8 +1,6 @@
 ---
 logo: /logo.png
 menu:
-  - label: Home
-    link: /
   - label: Products
     link: /products
   - label: Services
