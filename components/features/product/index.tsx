@@ -4,9 +4,10 @@ import { ProductQuery } from '../../../tina/__generated__/types'
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Product(props: ProductQuery['product']) {
-    const { uniqueId, productImages, title, overviewDescription } = props
+    const { uniqueId, productImages, title, overviewDescription, isNew, isHighlight, buyLinks } = props
     return (
         <div className='h-full flex flex-col gap-8 bg-gray-100 border rounded-md transition duration-300 ease-in-out hover:scale-[1.02]'>
+            {isNew && <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">  New   </span>}
             <Image src={productImages?.[0] || ''} height={600} width={500} alt={title || ''} className='mt-10 mx-auto flex-1' />
             <div className='p-12 flex-1 flex flex-col gap-6 justify-between ' >
                 <h2 className='text-4xl font-semibold'>{title}</h2>

@@ -4,8 +4,9 @@ import Product from '../../components/features/product';
 
 export default async function Products() {
     const productsConnection = await client.queries.productConnection()
-    const products = productsConnection.data.productConnection.edges;
-
+    const products = productsConnection.data.productConnection.edges?.sort((product_1, product_2) => {
+        return Number(product_1?.node?.index || 0) - Number(product_2?.node?.index || 0);
+    });
     if (!products || products.length === 0) {
         return <div className='container mx-auto pt-32  min-h-screen '>
             No Product Founds

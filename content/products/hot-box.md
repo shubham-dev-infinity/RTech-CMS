@@ -1,5 +1,7 @@
 ---
 uniqueId: hot-box
+index: '4'
+isNew: true
 productImages:
   - /products\d11fbd_e95ea78127224dec97e21ec2d1019b52~mv2.webp
   - /products\d11fbd_dd3fe892b27b426db49afcb1e84dd8af~mv2.webp
