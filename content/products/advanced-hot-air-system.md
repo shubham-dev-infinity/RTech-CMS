@@ -1,6 +1,10 @@
 ---
 uniqueId: advanced-hot-air-system
+index: '1'
+isNew: true
+isHighlight: true
 productImages:
+  - ''
   - /products\d11fbd_eaf1ca206dbf4f0699912fe083de66c5~mv2.webp
   - /products\d11fbd_73a70bc784fd4675a29821b53b8f4657~mv2.webp
 title: Advanced Hot Air System
@@ -19,7 +23,6 @@ description: >
 disclosures:
   - title: SYSTEM FEATURES
     features:
-      - Moving hot air nozzle
       - Custom UI with 7" High resolution touchscreen for ease of use
       - Programable parameters such as tacking time (sec) and cooling time (sec)
       - 'System allows 10 recipes to store various products/projects '
@@ -45,5 +48,8 @@ disclosures:
       - Camera system with mounts
       - Guards to cover the nozzle while advanced for safety purpose
       - Web app or mobile application to control the entire system
+buyLinks:
+  - title: Amazon
+    url: amazon.com
 ---
 
