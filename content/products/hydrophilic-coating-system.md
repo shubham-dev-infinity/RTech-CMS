@@ -1,5 +1,6 @@
 ---
 uniqueId: hydrophilic-coating-system
+index: '5'
 productImages:
   - /products\d11fbd_0cf4913b95d64e30b6922033cde17749~mv2.webp
 title: Hydrophilic Coating System

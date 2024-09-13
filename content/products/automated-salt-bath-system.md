@@ -1,5 +1,6 @@
 ---
 uniqueId: automated-salt-bath-system
+index: '3'
 productImages:
   - /products\d11fbd_d975cf0dc93d4418998eea0f1b8801a1~mv2.webp
 title: Automated Salt Bath System

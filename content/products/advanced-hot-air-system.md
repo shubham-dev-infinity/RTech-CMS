@@ -1,5 +1,8 @@
 ---
 uniqueId: advanced-hot-air-system
+index: '1'
+isNew: true
+isHighlight: true
 productImages:
   - /products\d11fbd_eaf1ca206dbf4f0699912fe083de66c5~mv2.webp
   - /products\d11fbd_73a70bc784fd4675a29821b53b8f4657~mv2.webp

@@ -27,7 +27,7 @@ export default function Navbar(props: {
                                 key={menu.label}
                                 link={menu.link || ''}
                                 className='inline-flex items-center  px-1 pt-1 font-medium text-gray-500 transition duration-700 ease-in-out border-b-2 border-white hover:border-b-2 hover:border-brandSecondary'
-                                activeClassName='border-b-2 border-brandSecondary text-gray-800'
+                                // activeClassName='border-b-2 border-brandSecondary text-gray-800'
                             >
                                 {menu.label}
                             </ActiveNavLink>)

@@ -1,5 +1,7 @@
 ---
 uniqueId: advanced-hot-box
+index: '2'
+isNew: true
 productImages:
   - /products\d11fbd_37691957eb8546b1967de397b4f53c64~mv2.webp
 title: Advanced Hot Box (Patent Pending)

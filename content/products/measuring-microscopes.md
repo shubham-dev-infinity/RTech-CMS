@@ -1,5 +1,6 @@
 ---
 uniqueId: measuring-microscopes
+index: '6'
 productImages:
   - /products\1.png
 title: Measuring Microscopes

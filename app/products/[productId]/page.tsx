@@ -19,6 +19,7 @@ export default async function ProductDetails(props: { params: { productId: strin
         return acc;
     }, []) || []
     const productImages = product.productImages?.map((image) => image || '') || []
+    const buyLinks = product.buyLinks
     return (
         <div className="bg-white container mx-auto min-h-screen pt-32 mb-20">
             <div className="">
@@ -41,6 +42,11 @@ export default async function ProductDetails(props: { params: { productId: strin
                         <div className="mt-6 text-gray-600">
                             <h3 className="sr-only">Description</h3>
                             <TinaMarkdown content={product.description} />
+                        </div>
+                        <div>
+                            {
+                                buyLinks?.map((buyLink, index) => buyLink && <a href={buyLink.url || ''} key={index}>{buyLink.title}</a>)
+                            }
                         </div>
                         <div className="my-16 flex">
                             <AddToCartButton product={JSON.parse(JSON.stringify(product))} />

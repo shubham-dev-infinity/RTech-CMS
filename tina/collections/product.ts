@@ -15,6 +15,21 @@ export const ProductCollection: Collection = {
       label: "UniqueId",
     },
     {
+      type: "string",
+      name: "index",
+      label: "Index",
+    },
+    {
+      type: "boolean",
+      name: "isNew",
+      label: "Is New?",
+    },
+    {
+      type: "boolean",
+      name: "isHighlight",
+      label: "Is Highlight?",
+    },
+    {
       type: "image",
       name: "productImages",
       label: "Product Images",
@@ -51,6 +66,24 @@ export const ProductCollection: Collection = {
           name: 'features',
           label: 'Features',
           list: true
+        },
+      ]
+    },
+    {
+      type: 'object',
+      name: 'buyLinks',
+      label: 'Buy Links',
+      list: true,
+      fields: [
+        {
+          type: 'string',
+          name: 'title',
+          label: 'Title'
+        },
+        {
+          type: 'string',
+          name: 'url',
+          label: 'URL',
         },
       ]
     }

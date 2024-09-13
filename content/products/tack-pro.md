@@ -1,5 +1,6 @@
 ---
 uniqueId: tack-pro
+index: '8'
 productImages:
   - /products\d11fbd_75b7ade0c2eb4716a127ef8e24950eed~mv2.webp
 title: Tack Pro
