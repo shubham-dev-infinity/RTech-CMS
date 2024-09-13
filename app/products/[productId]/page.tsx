@@ -45,7 +45,7 @@ export default async function ProductDetails(props: { params: { productId: strin
                         </div>
                         <div>
                             {
-                                buyLinks?.map((buyLink) => buyLink && <a href={buyLink.url || ''}>{buyLink.title}</a>)
+                                buyLinks?.map((buyLink, index) => buyLink && <a href={buyLink.url || ''} key={index}>{buyLink.title}</a>)
                             }
                         </div>
                         <div className="my-16 flex">
